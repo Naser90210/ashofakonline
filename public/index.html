@@ -2,6 +2,7 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <title>ashofakonline</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="w3.css">
@@ -10,29 +11,34 @@
 </head>
 <body onresize="document.getElementsByTagName('body').style.height = window.innerHeight">
    
-            <div class="w3-row-padding w3-margin-top" style="display:none">
+        <div id="selectRoom">
+            <h1>ashofakonline</h1>
+            <div class="w3-row-padding w3-margin-top">
                 <div class="w3-bar">
-                    <input class="w3-input w3-border w3-bar-item w3-margin-right" type="text" placeholder="Room ID">
-                    <button class="w3-button w3-circle w3-black w3-bar-item">></button>
+                    <input id="roomNumber" class="w3-input w3-border w3-bar-item w3-margin-right" type="text" placeholder="Room ID">
+                    <button id="goRoom" class="w3-button w3-circle w3-black w3-bar-item">></button>
                 </div>
             </div>
+        </div>
 
 
-    <div
+        <div id="consultingRoom" style="display:none"></div>
             <div class="w3-row-padding">
                 <div class="w3-container w3-col m6 w3-margin-top">
                     <div class="w3-card-4">
-                        <img src="img/img_snowtops.jpg" alt="Norway" style="width:100%">
+                        <video id="localVideo" autoplay style="width:100%"></video>
                     </div>
                 </div>
 
                 <div class="w3-container w3-col m6 w3-margin-top">
                     <div class="w3-card-4">
-                        <img src="img/img_london.jpg" alt="Norway" style="width:100%">
+                            <video id="remoteVideo" autoplay style="width:100%"></video>
                     </div>
                 </div>
-            </div>
-
+        </div>
+        
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="client.js"></script>
 
 </body>
 </html>
